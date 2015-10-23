@@ -23,6 +23,10 @@ ratpack {
 
   handlers {
     get('reverseProxyAdmin', ConfigHandler)
+
+    all ProxyModule.loggingHandler()
+    all ProxyModule.blacklistHandler()
+    all ProxyModule.canaryHandler()
     all ProxyModule.proxyHandler()
   }
 }
